@@ -4,6 +4,7 @@
 <head>
 	<title>My HCI Friends</title>	
 	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device=width,initial-scale=1.0">
 
 	<script src = "js/jquery-1.11.0.js"></script>
 	<script src = "js/bootstrap.js"></script>
@@ -17,7 +18,17 @@
 <body>
 	<div class="container">
 	<h1>My HCI Friends</h1>
-
+	{{#each friends}}
+	<div class ="friend">
+		<a href="friend" >
+			<img src={{imageURL}} class="img-responsive img-rounded">
+		</a>
+		<a href="#">
+			<h3>{{name}}</h3>
+		</a>
+		<p>{{description}}</p>
+	</div>
+	{{/each}}
 	<form id="addFriendForm" role="form" method="get" action="/add">
 		<h3>Add a friend</h3>
 	    <div class="form-group">
